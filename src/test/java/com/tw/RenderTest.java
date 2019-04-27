@@ -71,7 +71,12 @@ public class RenderTest {
         Klass klass =new Klass();
         klass.addOneStudent(student1);
         klass.addOneStudent(student2);
-        String result = renderObj.renderTable(klass);
+
+        ArrayList<Student> studentList=new ArrayList<Student>();
+        studentList.add(student1);
+        studentList.add(student2);
+
+        String result = renderObj.renderTable(klass,studentList);
         String expectedResult = "成绩单\n"+
         "姓名|数学|语文|英语|编程|平均分|总分\n"+
         "========================\n"+

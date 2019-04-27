@@ -1,5 +1,7 @@
 package com.tw;
 
+import java.util.ArrayList;
+
 public class Render {
 
     public String renderMenu() {
@@ -29,7 +31,7 @@ public class Render {
         return "请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：";
     }
 
-    public String renderTable(Klass klass){
+    public String renderTable(Klass klass,ArrayList <Student> studentList){
         String studentGrade="";
         for(Student student:klass.allStudents){
             studentGrade+=student.render();
