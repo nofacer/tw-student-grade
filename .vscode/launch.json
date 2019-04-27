@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GUI",
+            "request": "launch",
+            "mainClass": "com.tw.GUI",
+            "projectName": "student-grade-command-pattern-java-2019-1-8-2-59-10-727"
+        }
+    ]
+}
