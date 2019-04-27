@@ -1,12 +1,12 @@
 package com.tw;
 
 public class Student {
-    private String name;
-    private String eyed;
-    private int math;
-    private int chinese;
-    private int english;
-    private int computer;
+    public String name;
+    public String eyed;
+    public int math;
+    public int chinese;
+    public int english;
+    public int computer;
 
     public Student(String myName, String myId, int myMath, int myChinese, int myEnglish, int myComputer) {
         name=myName;
@@ -44,6 +44,16 @@ public class Student {
         else{
             return false;
         }
+    }
+
+    public boolean totallySame(Student anotherStudent){
+        if(name.equals(anotherStudent.name) && eyed.equals(anotherStudent.eyed) && math==anotherStudent.math && chinese==anotherStudent.chinese && english==anotherStudent.english && computer==anotherStudent.computer){
+            return true;
+        }
+        else{
+            return false;
+        }
+
     }
 
 }

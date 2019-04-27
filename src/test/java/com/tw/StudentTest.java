@@ -68,4 +68,22 @@ public class StudentTest {
         boolean expectedResult=false;
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void should_return_true_2_student_object_is_same() throws Exception {
+        Student Student1 = new Student("Tom", "234", 65, 80, 70, 90);
+        Student Student2 = new Student("Tom", "234", 65, 80, 70, 90);
+        boolean result=Student1.totallySame(Student2);
+        boolean expectedResult=true;
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void should_return_false_2_student_object_is_not_totally_same() throws Exception {
+        Student Student1 = new Student("Tom", "234", 65, 80, 70, 90);
+        Student Student2 = new Student("Tom", "234", 66, 80, 70, 90);
+        boolean result=Student1.totallySame(Student2);
+        boolean expectedResult=false;
+        assertEquals(expectedResult, result);
+    }
 }
