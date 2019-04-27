@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class RenderTest {
     private Render renderObj;
@@ -64,24 +64,24 @@ public class RenderTest {
         assertEquals(expectedResult, result);
     }
 
-    // @Test
-    // public void should_return_grade_table() throws Exception {
-    //     Student student1=new Student("张三", "001", 75, 90, 80, 80);
-    //     Student student2=new Student("李四", "002", 85, 80, 70, 90);
-    //     ArrayList<Student> studentList=new ArrayList<Student>();
-    //     studentList.add(student1);
-    //     studentList.add(student2);
-    //     String result = renderObj.renderTable(studentList);
-    //     String expectedResult = "成绩单\n"+
-    //     "姓名|数学|语文|英语|编程|平均分|总分\n"+
-    //     "========================\n"+
-    //     "张三|75|95|80|80|82.5|330\n"+
-    //     "李四|85|80|70|90|81.25|325\n"+
-    //     "========================\n"+
-    //     "全班总分平均数：xxx\n"+
-    //     "全班总分中位数：xxx";
+    @Test
+    public void should_return_grade_table() throws Exception {
+        Student student1=new Student("张三", "001", 75, 95, 80, 80);
+        Student student2=new Student("李四", "002", 85, 80, 70, 90);
+        Klass klass =new Klass();
+        klass.addOneStudent(student1);
+        klass.addOneStudent(student2);
+        String result = renderObj.renderTable(klass);
+        String expectedResult = "成绩单\n"+
+        "姓名|数学|语文|英语|编程|平均分|总分\n"+
+        "========================\n"+
+        "张三|75|95|80|80|82.5|330\n"+
+        "李四|85|80|70|90|81.25|325\n"+
+        "========================\n"+
+        "全班总分平均数：327.5\n"+
+        "全班总分中位数：327.5\n";
 
-    //     assertEquals(expectedResult, result);
-    // }
+        assertEquals(expectedResult, result);
+    }
 
 }

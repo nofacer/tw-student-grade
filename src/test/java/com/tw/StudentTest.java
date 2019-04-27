@@ -48,8 +48,24 @@ public class StudentTest {
     @Test
     public void should_render_grade() throws Exception {
         String result = student.render();
-        String expectedResult = "Tom|85|80|70|90|81.25|325";
+        String expectedResult = "Tom|85|80|70|90|81.25|325\n";
 
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void should_return_true_if_id_are_same() throws Exception {
+        Student newStudent = new Student("x", "123", 65, 80, 70, 90);
+        boolean result=student.compare(newStudent);
+        boolean expectedResult=true;
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void should_return_false_if_id_are_not_same() throws Exception {
+        Student newStudent = new Student("Tom", "234", 65, 80, 70, 90);
+        boolean result=student.compare(newStudent);
+        boolean expectedResult=false;
         assertEquals(expectedResult, result);
     }
 }

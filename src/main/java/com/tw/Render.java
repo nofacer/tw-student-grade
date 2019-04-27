@@ -28,4 +28,20 @@ public class Render {
     public String renderSecondErrorMessage(){
         return "请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：";
     }
+
+    public String renderTable(Klass klass){
+        String studentGrade="";
+        for(Student student:klass.allStudents){
+            studentGrade+=student.render();
+        }
+
+        return "成绩单\n"+
+        "姓名|数学|语文|英语|编程|平均分|总分\n"+
+        "========================\n"+
+        studentGrade+
+        "========================\n"+
+        "全班总分平均数："+klass.ave()+"\n"+
+        "全班总分中位数："+klass.median()+"\n";
+
+    }
 }

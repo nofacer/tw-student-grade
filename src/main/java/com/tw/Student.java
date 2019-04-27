@@ -34,7 +34,16 @@ public class Student {
     }
 
     public String render(){
-        return name+"|"+math+"|"+chinese+"|"+english+"|"+computer+"|"+ave()+"|"+total();
+        return name+"|"+math+"|"+chinese+"|"+english+"|"+computer+"|"+ave()+"|"+total()+"\n";
+    }
+
+    public boolean compare(Student anotherStudent){
+        if(eyed==anotherStudent.eyed){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 }
